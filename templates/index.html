@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/reset.css">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Images in Matrix</title>
+</head>
+<body>
+<table>
+    {% for row in matrix %}
+    <tr>
+        {% for col in row %}
+        {% if col.endswith('.jpg') %}
+        <td><img src="{{ col }}" alt="image" style="width: 50px; height: 50px;"></td>
+        {% else %}
+        <td>{{ col }}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
